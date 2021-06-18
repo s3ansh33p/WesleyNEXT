@@ -1,7 +1,7 @@
 // #hours_wasted_debugging_code = 12;
 
 // Main Config
-const site = 'https://uat.seanmcginty.space/next/';
+const site = 'http://localhost/nxt/';
 var w = window.innerWidth;
 var h = window.innerHeight;
 var size = (h < w) ? h : w;
@@ -408,7 +408,7 @@ $(document).ready(function(){
   let sugMin = 0;
   let sugMax = 1;
   if (energyCheck) {
-    let tmp = new StartingGlobals().hydrogen;
+    let tmp = parseInt(document.getElementById('startingHydrogen').value);
     sugMin = (tmp*14304*380 + (tmp*1000/2.016/4*44.01/1000)*839*380 + (tmp*1000/2.016/4*16.042/1000)*2225.4*800) / 1000;
     sugMax = sugMin + 1;
   }
@@ -518,7 +518,7 @@ function update() {
     window.chart5.data.datasets[0].data.push(((agents.length == 0) ? 0 : (globalStats().oxygen/agents.length).toString().slice(0,5)));
     window.chart5.data.datasets[1].data.push(((agents.length == 0) ? 0 : (globalStats().water/agents.length).toString().slice(0,5)));
     if (secondsElapsed == 0) {
-      let BeginningHydrogenValue = new StartingGlobals().hydrogen;
+      let BeginningHydrogenValue = parseInt(document.getElementById('startingHydrogen').value);
       energy = ((BeginningHydrogenValue*14304*380 + (BeginningHydrogenValue*1000/2.016/4*44.01/1000)*839*380 + (BeginningHydrogenValue*1000/2.016/4*16.042/1000)*2225.4*800) / 1000);
     }
     window.chart6.data.datasets[0].data.push(energy)
@@ -665,6 +665,7 @@ function reset(typeChange = false) {
     globals.hydrogen = parseInt(document.getElementById('startingHydrogen').value);
   }
   removeActiveNode();
+  if (speedMultiplier > 0 && !isLooping()) loop();
 }
 
 function exportData() {
