@@ -1,0 +1,230 @@
+:root {
+  --background: #0f0f0f;
+  --nav: #22272E;
+  --border: red;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Rubik, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Roboto, system-ui, sans-serif;
+  color: #141920 !important;
+}
+
+canvas {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background: #1a1a1a;
+}
+
+.no-canvas {
+  padding: 10px;
+  justify-content: flex-start!important;
+}
+
+.chart-container, .chart-container-l, .chart-container-r {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  background: var(--background);
+}
+
+.chart-container-l {
+  left: 0;
+}
+
+.chart-container-r {
+  right: 0;
+}
+
+.canvas-quarter {
+  border: 1px solid var(--border);
+  border-bottom: none;
+  height: 25vh!important;
+  width: 280px!important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+}
+
+.canvas-quarter canvas {
+  padding-top: 5px;
+  border-top: 1px solid var(--border);
+}
+
+.cont-l, .no-canvas {
+  border-bottom: 1px solid var(--border);
+}
+
+#defaultCanvas1 {
+  border: 1px solid var(--border);
+}
+
+#fs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: var(--background);
+  color: white;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background: crimson;
+}
+
+p {
+  margin: 0!important;
+}
+
+#simsettings {
+  margin-inline-end: auto;
+}
+
+.input-cont {
+  display: flex;
+}
+
+.gen-input {
+  width: 40px!important;
+}
+
+.slider {
+  margin: 0 6px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #000000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  border: 1px solid #000000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #db0000;
+  border-radius: 5px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ff0000;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #ff0000;
+  border-radius: 5px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #db0000;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #ff0000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ff0000;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ff0000;
+}
+
+input[type=number] {
+  color: white;
+  border: none;
+  background: none;
+  width: 60px;
+  text-align: center;
+}
